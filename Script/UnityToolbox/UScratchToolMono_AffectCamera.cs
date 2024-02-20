@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UScratchToolMono_AffectCamera : MonoBehaviour, I_ScratchBlockable
+public class UScratchToolMono_AffectCamera : A_ScratchBlockableMono
 {
     public Camera m_toAffect;
 
@@ -29,7 +29,7 @@ public class UScratchToolMono_AffectCamera : MonoBehaviour, I_ScratchBlockable
         yield return null;
     }
 
-    public IEnumerator DoTheScratchableStuff()
+    public override IEnumerator DoTheScratchableStuff()
     {
         if (m_timeToChange < 0)
             ChangeWithRandomColor();

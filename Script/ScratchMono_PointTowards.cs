@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScratchMono_PointTowards : MonoBehaviour, I_ScratchBlockable
+public class ScratchMono_PointTowards : A_ScratchBlockableMono
 {
 
     public Transform m_whatToPointAt;
@@ -24,7 +24,7 @@ public class ScratchMono_PointTowards : MonoBehaviour, I_ScratchBlockable
         m_whatToRotate.rotation = Quaternion.LookRotation(point - m_whatToRotate.position, Vector3.up);
     }
 
-    public IEnumerator DoTheScratchableStuff()
+    public override IEnumerator DoTheScratchableStuff()
     {
         PointTowardsValueInInspector();
         yield return null;

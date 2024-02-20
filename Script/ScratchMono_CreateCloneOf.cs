@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScratchMono_CreateCloneOf : MonoBehaviour, I_ScratchBlockable
+public class ScratchMono_CreateCloneOf : A_ScratchBlockableMono
 {
 
     public GameObject m_objectToClone;
     public List<GameObject> m_created = new List<GameObject>();
     public Transform m_cloneParent;
-    public IEnumerator DoTheScratchableStuff()
+    public override IEnumerator DoTheScratchableStuff()
     {
         CreateClone();
         yield return null;

@@ -1,16 +1,16 @@
 ﻿using System.Collections;
 
-public class ScratchControlMono_RepeatUntil : UnityEngine.MonoBehaviour, I_ScratchBlockable
+public class ScratchControlMono_RepeatUntil : A_ScratchBlockableMono
 {
 
     public AbstractScratchMono_ConditionHolder m_ifCondition;
-    public ScratchMono_CoroutineStack m_whatToRepeat;
+    public A_ScratchBlockableMono m_whatToRepeat;
     public bool m_useFrameWaitSecurity = true;
 
-    public IEnumerator DoTheScratchableStuff()
+    public override IEnumerator DoTheScratchableStuff()
     {
         while (m_ifCondition.IsConditionTrue()) { 
-            yield return m_whatToRepeat;
+            yield return m_whatToRepeat.DoTheScratchableStuff();
             if (m_useFrameWaitSecurity)
                 yield return new UnityEngine.WaitForEndOfFrame();
         }

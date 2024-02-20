@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScratchMonoScriptNode_GlideToPosition : MonoBehaviour, I_ScratchBlockable
+public class ScratchMonoScriptNode_GlideToPosition : A_ScratchBlockableMono
 { 
 
     public AbstractScratchMono_VariableHolderVector3 m_position;
@@ -62,7 +62,7 @@ public class ScratchMonoScriptNode_GlideToPosition : MonoBehaviour, I_ScratchBlo
         m_whatToMove = this.transform;
     }
 
-    public IEnumerator DoTheScratchableStuff()
+    public override IEnumerator DoTheScratchableStuff()
     {
         SetGlidingSetup(m_position.GetVector3(), m_timeToGlide.GetValueAsFloat());
         yield return Coroutinable_GlideToGivenValue();

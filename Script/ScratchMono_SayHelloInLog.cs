@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class ScratchMono_SayHelloInLog : MonoBehaviour, I_ScratchBlockable
+public class ScratchMono_SayHelloInLog : A_ScratchBlockableMono
 {
     public string m_textToDisplay;
     public LogType m_logType;
     public enum LogType { Log, Warning,Error}
-    public IEnumerator DoTheScratchableStuff()
+    public override IEnumerator DoTheScratchableStuff()
     {
         if (m_logType == LogType.Log)
             Debug.Log(m_textToDisplay);

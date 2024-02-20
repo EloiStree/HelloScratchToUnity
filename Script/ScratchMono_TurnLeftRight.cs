@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScratchMono_TurnLeftRight : MonoBehaviour
+public class ScratchMono_TurnLeftRight :  A_ScratchBlockableMono
 {
-
+        
     public float m_valueInAngle;
     public RotationType m_rotationWanted = RotationType.Right;
     public enum RotationType { Left, Right}
@@ -25,5 +25,11 @@ public class ScratchMono_TurnLeftRight : MonoBehaviour
     public void Reset()
     {
         m_whatToRotate = this.transform;
+    }
+
+    public override IEnumerator DoTheScratchableStuff()
+    {
+        RotateWithInspectorValue();
+        yield return null;
     }
 }

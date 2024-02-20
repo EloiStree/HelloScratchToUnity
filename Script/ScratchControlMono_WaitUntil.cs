@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class ScratchControlMono_WaitUntil : UnityEngine.MonoBehaviour, I_ScratchBlockable
+public class ScratchControlMono_WaitUntil : A_ScratchBlockableMono
 {
     public AbstractScratchMono_ConditionHolder m_ifCondition;
  
-    public IEnumerator DoTheScratchableStuff()
+    public override IEnumerator DoTheScratchableStuff()
     {
         if (!Application.isPlaying)
             yield return null;

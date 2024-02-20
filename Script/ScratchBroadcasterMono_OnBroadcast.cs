@@ -13,13 +13,17 @@ public class ScratchBroadcasterMono_OnBroadcastReceived : MonoBehaviour, I_Scrat
 
     public string m_lastReceivedBroadcast;
 
-    public ScratchMono_CoroutineStack m_stackToRun;
+    public A_ScratchBlockableMono m_blockToRunOnReceived;
     public Coroutine m_currentlyRunning;
     public BroadcastFeedBackDefault m_broadcastFeedback = new();
     public bool m_useTrim=true;
     public bool m_ignoreCase=true;
 
 
+    private void Reset()
+    {
+        m_blockToRunOnReceived = GetComponent<A_ScratchBlockableMono>();
+    }
     private void OnEnable()
     {
         ScratchBroadcasterSingleton.AddBroadcastListener(this);
@@ -74,7 +78,7 @@ public class ScratchBroadcasterMono_OnBroadcastReceived : MonoBehaviour, I_Scrat
     private IEnumerator Run()
     {
         m_broadcastFeedback.SetAsRunning();
-        yield return m_stackToRun.DoTheScratchableStuff();
+        yield return m_blockToRunOnReceived.DoTheScratchableStuff();
         m_broadcastFeedback.SetAsStopped();
     }
 
@@ -92,8 +96,19 @@ public interface I_ScratchBroadcastListener {
     public void OnBroadcastMessage(string broadcastMessage);
     public void OnBroadcastMessageWithStateRequest(string broadcastMessage, out I_BroadcastFeedBack isConsquenceStillActive);
 }
-public interface I_BroadcastFeedBack{
+public interface I_BroadcastFeedBack
+{
     public bool IsConsequenceOfLastBroadcastStillActive();
+}
+public interface I_ScratchProcessDoneFeedBack
+{
+    public bool IsProcessFinished();
+}
+public interface I_ScratchProcessDoneFeedBackSettable
+{
+    public bool IsProcessFinished();
+    public void SetAsRunning(bool isRunning = true);
+    public void SetAsStopped();
 }
 
 [System.Serializable]
@@ -103,6 +118,17 @@ public class BroadcastFeedBackDefault : I_BroadcastFeedBack
     public bool IsConsequenceOfLastBroadcastStillActive()
     {
         return m_isStillRunning;
+    }
+    public void SetAsRunning(bool isRunning = true) { m_isStillRunning = isRunning; }
+    public void SetAsStopped() { m_isStillRunning = false; }
+}
+
+public class ScratchProcessDoneFeedBack : I_ScratchProcessDoneFeedBackSettable
+{
+    public bool m_isStillRunning;
+    public bool IsProcessFinished()
+    {
+        return !m_isStillRunning;
     }
     public void SetAsRunning(bool isRunning = true) { m_isStillRunning = isRunning; }
     public void SetAsStopped() { m_isStillRunning = false; }

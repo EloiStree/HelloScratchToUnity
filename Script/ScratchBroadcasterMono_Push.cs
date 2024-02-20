@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScratchBroadcasterMono_Push : MonoBehaviour, I_ScratchBlockable
+public class ScratchBroadcasterMono_Push :  A_ScratchBlockableMono
 {
 
     public string m_messageToPush;
 
-    public IEnumerator DoTheScratchableStuff()
+    public override IEnumerator DoTheScratchableStuff()
     {
             PushWithInspectorValue();
             yield return null;

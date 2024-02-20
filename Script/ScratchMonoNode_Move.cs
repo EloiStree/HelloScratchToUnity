@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScratchMonoNode_MoveBlock : MonoBehaviour
+public class ScratchMonoNode_Move : MonoBehaviour
 {
 
     public AbstractScratchMono_VariableHolderAsString m_value;

@@ -2,24 +2,24 @@
 
 public class ScratchBroadcasterFlagStartStopMono :MonoBehaviour{
 
-    public bool m_useAutoStartAtEnable = true;
-    public bool m_useAutoStopAtDisable = true;
-    public bool m_useAutoStopAtDestroy = true;
-    public void OnEnable()
+   [SerializeField ]bool m_useAutoStartAtEnable = true;
+   [SerializeField] bool m_useAutoStopAtDisable = true;
+   [SerializeField] bool m_useAutoStopAtDestroy = true;
+     void OnEnable()
     {
         if (m_useAutoStartAtEnable)
         {
             BroadcastGreenFlagStartEvent();
         }
     }
-    public void OnDisable()
+     void OnDisable()
     {
         if (m_useAutoStopAtDisable)
         {
             BroadcastGreenRedStopEvent();
         }
     }
-    public void OnDestroy()
+     void OnDestroy()
     {
         if (m_useAutoStopAtDestroy)
         {
@@ -28,11 +28,11 @@ public class ScratchBroadcasterFlagStartStopMono :MonoBehaviour{
     }
 
 
-    private void BroadcastGreenFlagStartEvent()
+    public  void BroadcastGreenFlagStartEvent()
     {
         ScratchBroadcasterSingletonFlagStartStop.TriggerStartFlag();
     }
-    private void BroadcastGreenRedStopEvent()
+    public void BroadcastGreenRedStopEvent()
     {
         ScratchBroadcasterSingletonFlagStartStop.TriggerRedStop();
     }

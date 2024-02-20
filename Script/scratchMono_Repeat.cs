@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class scratchMono_Repeat: MonoBehaviour, I_ScratchBlockable
+public class scratchMono_Repeat: A_ScratchBlockableMono
 {
     public int m_repeatCount = 10;
     public ScratchMono_CoroutineStack m_scratchStack;
@@ -17,7 +17,7 @@ public class scratchMono_Repeat: MonoBehaviour, I_ScratchBlockable
 
     }
 
-    public IEnumerator DoTheScratchableStuff()
+    public override IEnumerator DoTheScratchableStuff()
     {
         for (int i = 0; i < m_repeatCount; i++)
         {

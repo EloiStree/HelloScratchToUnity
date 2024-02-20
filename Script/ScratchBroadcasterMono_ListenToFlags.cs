@@ -8,6 +8,8 @@ public class ScratchBroadcasterMono_ListenToFlags : MonoBehaviour
 {
     public UnityEvent m_onGreenFlag;
     public UnityEvent m_onRedFlag;
+    public A_ScratchBlockableMono[] m_onGreenFlagBlock;
+    public A_ScratchBlockableMono[] m_onRedFlagBlock;
 
     void Awake()
     {
@@ -23,11 +25,19 @@ public class ScratchBroadcasterMono_ListenToFlags : MonoBehaviour
     private void NotifyRed()
     {
         m_onRedFlag.Invoke();
+        foreach (var item in m_onRedFlagBlock)
+        {
+            item.ExecuteBlockAsCoroutine();
+        }
     }
 
     private void NotifyGreen()
     {
-        m_onGreenFlag.Invoke();
+        m_onGreenFlag.Invoke(); 
+        foreach (var item in m_onGreenFlagBlock)
+        {
+            item.ExecuteBlockAsCoroutine();
+        }
     }
 
     [ContextMenu("Notify Red")]

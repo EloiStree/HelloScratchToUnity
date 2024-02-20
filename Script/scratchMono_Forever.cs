@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class scratchMono_Forever : MonoBehaviour, I_ScratchBlockable
+public class ScratchMono_Forever : A_ScratchBlockableMono
 {
     public bool m_useEndOfFrameSecurity = true;
-    public ScratchMono_CoroutineStack m_scratchStack;
+    public A_ScratchBlockableMono m_blockableToRunForever;
 
     public Coroutine m_running;
 
@@ -17,17 +17,44 @@ public class scratchMono_Forever : MonoBehaviour, I_ScratchBlockable
         
     }       
 
-    public IEnumerator DoTheScratchableStuff()
+    public override IEnumerator DoTheScratchableStuff()
     {
         if (!Application.isPlaying)
             yield return null;
         while (true) {
-
-            if(m_scratchStack)
-                yield return m_scratchStack.DoTheScratchableStuff();
+            if (m_blockableToRunForever == this) {
+                Debug.LogError("Never put in forever himself");
+                throw new System.Exception("Never put in forever himself");
+                
+            }
+            if(m_blockableToRunForever)
+                yield return m_blockableToRunForever.DoTheScratchableStuff();
             
             if (m_useEndOfFrameSecurity)
                 yield return new WaitForEndOfFrame();
         }
+    }
+
+    private void Reset()
+    {
+        foreach (var item in GetComponents<A_ScratchBlockableMono>())
+        {
+            if (item != this)
+            {
+                m_blockableToRunForever = item;
+                return;
+            }
+
+        }
+        foreach (var item in GetComponentsInChildren<A_ScratchBlockableMono>())
+        {
+            if (item != this)
+            {
+                m_blockableToRunForever = item;
+                return;
+            }
+
+        }
+     
     }
 }

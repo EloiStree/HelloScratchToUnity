@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScratchMono_MoveBlock : MonoBehaviour
+public class ScratchMono_Move : A_ScratchBlockableMono
 {
 
     public float m_value;
@@ -21,5 +21,11 @@ public class ScratchMono_MoveBlock : MonoBehaviour
     public void Reset()
     {
         m_whatToMove = this.transform;
+    }
+
+    public override IEnumerator DoTheScratchableStuff()
+    {
+        MoveWithInspectorValue();
+        yield return null;
     }
 }

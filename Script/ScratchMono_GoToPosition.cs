@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScratchMono_GoToPosition : MonoBehaviour, I_ScratchBlockable
+public class ScratchMono_GoToPosition : A_ScratchBlockableMono
 {
 
     public Vector3 m_position;
@@ -21,7 +21,7 @@ public class ScratchMono_GoToPosition : MonoBehaviour, I_ScratchBlockable
         m_whatToMove = this.transform;
     }
 
-    public IEnumerator DoTheScratchableStuff()
+    public  override IEnumerator  DoTheScratchableStuff()
     {
         GoToValueInInspector();
         yield return null;

@@ -3,14 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScratchMono_CoroutineStack : MonoBehaviour, I_ScratchBlockable
+public class ScratchMono_CoroutineStack :  A_ScratchBlockableMono
 {
 
-    public List<MonoBehaviour> m_scriptToPlay = new List<MonoBehaviour>();
+    public List<A_ScratchBlockableMono> m_scriptToPlay = new List<A_ScratchBlockableMono>();
 
     [Header("Debug")]
-    public List<MonoBehaviour> m_played = new List<MonoBehaviour>();
-    public MonoBehaviour m_playing;
+    public List<A_ScratchBlockableMono> m_played = new List<A_ScratchBlockableMono>();
+    public A_ScratchBlockableMono m_playing;
     public int m_index = 0;
     public Coroutine m_coroutine;
     [ContextMenu("Play Stack")]
@@ -36,8 +36,19 @@ public class ScratchMono_CoroutineStack : MonoBehaviour, I_ScratchBlockable
         }
     }
 
-    public IEnumerator DoTheScratchableStuff()
+    public override IEnumerator DoTheScratchableStuff()
     {
         yield return  Coroutine_Play();
+    }
+}
+
+
+public abstract class A_ScratchBlockableMono :MonoBehaviour, I_ScratchBlockable
+{
+    public abstract IEnumerator DoTheScratchableStuff();
+
+    [ContextMenu("Execute Block as Coroutine")]
+    public void ExecuteBlockAsCoroutine() { 
+        StartCoroutine(DoTheScratchableStuff());
     }
 }

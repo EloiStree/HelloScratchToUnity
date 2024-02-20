@@ -18,7 +18,5 @@ public class ScratchMono_WhenPressKeyboard : MonoBehaviour
             m_onKeyPressed.Invoke();
         if (Input.GetKeyUp(m_keyObserved))
             m_onKeyReleased.Invoke();
-
-
     }
 }

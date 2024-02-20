@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScratchMonoScriptNode_GoToPosition : MonoBehaviour, I_ScratchBlockable
+public class ScratchMonoScriptNode_GoToPosition : A_ScratchBlockableMono
 {
     public AbstractScratchMono_VariableHolderVector3 m_position;
     public Transform m_whatToMove;
@@ -23,7 +23,7 @@ public class ScratchMonoScriptNode_GoToPosition : MonoBehaviour, I_ScratchBlocka
         m_whatToMove = this.transform;
     }
 
-    public IEnumerator DoTheScratchableStuff()
+    public override IEnumerator DoTheScratchableStuff()
     {
         GoToValueInInspector();
         yield return null;
