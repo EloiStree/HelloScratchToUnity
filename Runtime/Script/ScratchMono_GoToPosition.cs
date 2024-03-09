@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class ScratchMono_GoToPosition : A_ScratchBlockableMono
 {
 
@@ -25,5 +27,10 @@ public class ScratchMono_GoToPosition : A_ScratchBlockableMono
     {
         GoToValueInInspector();
         yield return null;
+    }
+
+    public override void DoTheScratchableStuffWithoutCoroutine()
+    {
+        GoToValueInInspector();
     }
 }

@@ -6,7 +6,6 @@ public class ScratchMono_VariableHolder : AbstractScratchMono_VariableHolderAsSt
 {
     public string m_variable;
 
-
     public void SetValue(string value) { m_variable = value; }
     public void SetValue(int value) { m_variable = value.ToString(); }
     public void SetValue(float value) { m_variable = value.ToString(); }
@@ -20,8 +19,6 @@ public class ScratchMono_VariableHolder : AbstractScratchMono_VariableHolderAsSt
 
 
 public abstract class AbstractScratchMono_VariableHolderAsString : MonoBehaviour {
-
-
     public abstract string GetVariableAsString();
 
     public float GetValueAsFloat(float defaulValueIfError = 0)

@@ -67,4 +67,9 @@ public class ScratchMonoScriptNode_GlideToPosition : A_ScratchBlockableMono
         SetGlidingSetup(m_position.GetVector3(), m_timeToGlide.GetValueAsFloat());
         yield return Coroutinable_GlideToGivenValue();
     }
+
+    public override void DoTheScratchableStuffWithoutCoroutine()
+    {
+        m_whatToMove.position = m_position.GetVector3();
+    }
 }

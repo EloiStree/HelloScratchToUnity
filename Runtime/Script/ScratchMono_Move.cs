@@ -28,4 +28,9 @@ public class ScratchMono_Move : A_ScratchBlockableMono
         MoveWithInspectorValue();
         yield return null;
     }
+
+    public override void DoTheScratchableStuffWithoutCoroutine()
+    {
+        MoveWithInspectorValue();
+    }
 }

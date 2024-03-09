@@ -13,6 +13,11 @@ public class ScratchMono_StartSound : A_ScratchBlockableMono
         yield return null;
         
     }
+
+    public override void DoTheScratchableStuffWithoutCoroutine()
+    {
+        ScratchAudioStaticSingleton.PlaySound(m_sound);
+    }
 }
 public abstract class AbstractScratchAudioPlayer : MonoBehaviour
 {

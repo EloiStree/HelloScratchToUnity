@@ -32,4 +32,9 @@ public class ScratchMono_TurnLeftRight :  A_ScratchBlockableMono
         RotateWithInspectorValue();
         yield return null;
     }
+
+    public override void DoTheScratchableStuffWithoutCoroutine()
+    {
+        RotateWithInspectorValue();
+    }
 }

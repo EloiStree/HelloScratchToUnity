@@ -15,4 +15,9 @@ public class ScratchBroadcasterMono_Push :  A_ScratchBlockableMono
 
     public void PushWithInspectorValue() { ScratchBroadcasterSingleton.BroadcastWithoutWaiting(m_messageToPush); }
     public void PushWithGivenValue(string label) { ScratchBroadcasterSingleton.BroadcastWithoutWaiting(label); }
+
+    public override void DoTheScratchableStuffWithoutCoroutine()
+    {
+        PushWithInspectorValue();
+    }
 }

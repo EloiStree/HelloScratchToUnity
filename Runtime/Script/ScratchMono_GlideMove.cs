@@ -63,4 +63,9 @@ public class ScratchMono_GlideMove : A_ScratchBlockableMono
     {
         return Coroutinable_GlideToGivenValue(m_moveValue, m_timeToGlide);
     }
+
+    public override void DoTheScratchableStuffWithoutCoroutine()
+    {
+        m_whatToMove.position =m_whatToMove.position + m_whatToMove.forward * m_moveValue;
+    }
 }

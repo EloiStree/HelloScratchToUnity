@@ -618,6 +618,37 @@ Transform:
   - {fileID: 1184397666}
   m_Father: {fileID: 1366740608}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &192601056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 192601057}
+  m_Layer: 0
+  m_Name: '## SCENE INTENT ##   Show in C# and Scratch C# from online demo'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &192601057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192601056}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.38268352, z: -0, w: 0.9238795}
+  m_LocalPosition: {x: 0, y: 0.063, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &193151807
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,7 +1171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_listenToLabel: ChangeBackgroundColor
   m_lastReceivedBroadcast: 
-  m_stackToRun: {fileID: 303350951}
+  m_blockToRunOnReceived: {fileID: 0}
   m_broadcastFeedback:
     m_isStillRunning: 0
   m_useTrim: 1
@@ -1417,7 +1448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_useEndOfFrameSecurity: 1
-  m_scratchStack: {fileID: 389915283}
+  m_blockableToRunForever: {fileID: 0}
 --- !u!114 &389915285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3086,7 +3117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_useEndOfFrameSecurity: 1
-  m_scratchStack: {fileID: 255051994}
+  m_blockableToRunForever: {fileID: 0}
 --- !u!4 &1241783893
 Transform:
   m_ObjectHideFlags: 0
@@ -3311,7 +3342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_useEndOfFrameSecurity: 1
-  m_scratchStack: {fileID: 1292986999}
+  m_blockableToRunForever: {fileID: 0}
 --- !u!114 &1292987001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4548,6 +4579,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_onGreenFlagBlock: []
+  m_onRedFlagBlock: []
 --- !u!4 &1807364649
 Transform:
   m_ObjectHideFlags: 0
@@ -5254,6 +5287,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 192601057}
   - {fileID: 2711950860098372597}
   - {fileID: 4289614531238760298}
   - {fileID: 5567312340908175171}

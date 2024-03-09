@@ -52,4 +52,9 @@ public class ScratchMono_CreateCloneOf : A_ScratchBlockableMono
 
 
     }
+
+    public override void DoTheScratchableStuffWithoutCoroutine()
+    {
+        CreateClone();
+    }
 }

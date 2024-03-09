@@ -57,4 +57,9 @@ public class ScratchMono_Forever : A_ScratchBlockableMono
         }
      
     }
+
+    public override void DoTheScratchableStuffWithoutCoroutine()
+    {
+        NotifyTheActionWouldBeDangerousToExecuteOutsideOfPlayMode();
+    }
 }

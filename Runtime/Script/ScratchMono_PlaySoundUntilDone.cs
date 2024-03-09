@@ -13,4 +13,9 @@ public class ScratchMono_PlaySoundUntilDone : A_ScratchBlockableMono
          while (feedBack!=null && !feedBack.IsProcessFinished())
             yield return new WaitForEndOfFrame();
     }
+
+    public override void DoTheScratchableStuffWithoutCoroutine()
+    {
+        NotifyTheActionCantBeDoneInNonePlayMode();
+    }
 }

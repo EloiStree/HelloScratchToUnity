@@ -34,4 +34,10 @@ public class ScratchBroadcasterMono_PushAndWait : A_ScratchBlockableMono
         }
         yield return null;
     }
+
+    public override void DoTheScratchableStuffWithoutCoroutine()
+    {
+
+        NotifyTheActionIsPossibleWihoutCoroutineButNotImplementedYet();
+    }
 }

@@ -13,4 +13,9 @@ public class ScratchControlMono_WaitUntil : A_ScratchBlockableMono
            yield return new UnityEngine.WaitForEndOfFrame();
         yield return null;
     }
+
+    public override void DoTheScratchableStuffWithoutCoroutine()
+    {
+        NotifyTheActionWouldBeDangerousToExecuteOutsideOfPlayMode();
+    }
 }

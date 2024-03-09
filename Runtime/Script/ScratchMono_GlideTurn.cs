@@ -63,4 +63,9 @@ public class ScratchMono_GlideTurn : A_ScratchBlockableMono
     {
         return Coroutinable_GlideToGivenValue(m_rotationInAngleLeftRight, m_timeToGlide);
     }
+
+    public override void DoTheScratchableStuffWithoutCoroutine()
+    {
+        NotifyTheActionIsPossibleWihoutCoroutineButNotImplementedYet();
+    }
 }

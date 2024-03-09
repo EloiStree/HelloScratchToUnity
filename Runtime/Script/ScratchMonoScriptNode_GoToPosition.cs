@@ -28,4 +28,9 @@ public class ScratchMonoScriptNode_GoToPosition : A_ScratchBlockableMono
         GoToValueInInspector();
         yield return null;
     }
+
+    public override void DoTheScratchableStuffWithoutCoroutine()
+    {
+        GoToValueInInspector();
+    }
 }

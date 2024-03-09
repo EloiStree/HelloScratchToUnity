@@ -29,4 +29,9 @@ public class ScratchMono_PointTowards : A_ScratchBlockableMono
         PointTowardsValueInInspector();
         yield return null;
     }
+
+    public override void DoTheScratchableStuffWithoutCoroutine()
+    {
+        PointTowardsValueInInspector();
+    }
 }

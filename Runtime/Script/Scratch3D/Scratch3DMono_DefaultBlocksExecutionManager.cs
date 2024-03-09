@@ -85,4 +85,10 @@ public class Scratch3DMono_DefaultBlocksExecutionManager : Scratch3DMono_Abstrac
             }
         }
     }
+
+    public override void DoTheScratchableStuffWithoutCoroutine()
+    {
+        //Not tested;
+        DoTheScratchableStuff();
+    }
 }

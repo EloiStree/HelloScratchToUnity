@@ -8,10 +8,12 @@ public class ScratchMonoNode_ChangeVolume : A_ScratchBlockableMono
 
     public override IEnumerator DoTheScratchableStuff()
     {
-        AudioListener.volume = Mathf.Clamp(AudioListener.volume +m_volumePercent.GetValueAsFloat(), 0.0f, 1.0f);
+        DoTheScratchableStuff();
         yield return null;
     }
 
-
-
+    public override void DoTheScratchableStuffWithoutCoroutine()
+    {
+        AudioListener.volume = Mathf.Clamp(AudioListener.volume + m_volumePercent.GetValueAsFloat(), 0.0f, 1.0f);
+    }
 }

@@ -17,4 +17,8 @@ public class ScratchControlMono_RepeatUntil : A_ScratchBlockableMono
         yield return null;
     }
 
+    public override void DoTheScratchableStuffWithoutCoroutine()
+    {
+        NotifyTheActionWouldBeDangerousToExecuteOutsideOfPlayMode();
+    }
 }

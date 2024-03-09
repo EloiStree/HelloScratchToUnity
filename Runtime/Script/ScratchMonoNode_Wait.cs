@@ -9,4 +9,8 @@ public class ScratchMonoNode_Wait : A_ScratchBlockableMono
     {
         yield return new WaitForSeconds(m_waitInSeconds.GetValueAsFloat());
     }
+
+    public override void DoTheScratchableStuffWithoutCoroutine()
+    {
+    }
 }

@@ -31,4 +31,9 @@ public class UScratchMono_SetTransformRotation : A_ScratchBlockableMono
         GoToValueInInspector();
         yield return null;
     }
+
+    public override void DoTheScratchableStuffWithoutCoroutine()
+    {
+        GoToValueInInspector();
+    }
 }

@@ -36,6 +36,11 @@ public class UScratchToolMono_AffectCamera : A_ScratchBlockableMono
         else yield return ChangeWithRandomColor(m_timeToChange);
     }
 
+    public override void DoTheScratchableStuffWithoutCoroutine()
+    {
+        ChangeWithRandomColor();
+    }
+
     private Color GetRandomColor()
     {
         return new Color(UnityEngine.Random.value, UnityEngine.Random.value, UnityEngine.Random.value, 1);

@@ -25,4 +25,13 @@ public class scratchMono_Repeat: A_ScratchBlockableMono
                 yield return m_scratchStack.DoTheScratchableStuff();
         }
     }
+
+    public override void DoTheScratchableStuffWithoutCoroutine()
+    {
+        for (int i = 0; i < m_repeatCount; i++)
+        {
+            if (m_scratchStack)
+                m_scratchStack.DoTheScratchableStuffWithoutCoroutine();
+        }
+    }
 }
