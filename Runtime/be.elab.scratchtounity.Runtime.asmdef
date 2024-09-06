@@ -1,9 +1,9 @@
 {
-    "name": "be.eloistree.scratchtounity",
+    "name": "be.elab.scratchtounity",
     "rootNamespace": "",
     "references": [
-        "be.eloistree.networkreceiver",
-        "be.eloistree.networksenders"
+        "be.elab.networkreceiver",
+        "be.elab.networksenders"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

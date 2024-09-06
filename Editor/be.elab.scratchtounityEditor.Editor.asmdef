@@ -1,7 +1,7 @@
 
 {                                                                   
-            "name": "be.eloistree.scratchtounityEditor",          
-    "references": ["be.eloistree.scratchtounity","be.eloistree.basicteachertoolbox"
+            "name": "be.elab.scratchtounityEditor",          
+    "references": ["be.elab.scratchtounity","be.eloistree.basicteachertoolbox"
 ],                                                              
     "optionalUnityReferences": [],                                  
     "includePlatforms": [                                           
